@@ -22,6 +22,7 @@ var bodyParser = require("body-parser");
 const { response } = require("express");
 var urlEncodedBodyParser = bodyParser.urlencoded({ extended: false });
 App.get("/", (request, response) => {
+  console.log('Hello There / Request recieved');
   response.send("Chess Game Server");
 });
 
@@ -314,7 +315,7 @@ App.post("/getNextMove", urlEncodedBodyParser, (req, res) => {
 });
 
 //start the server
-App.listen(PORT, (error) => {
+App.listen(process.env.PORT||PORT, (error) => {
   if (!error) {
     console.log("Server Running On Port : " + PORT);
   } else console.log(error);

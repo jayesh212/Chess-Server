@@ -317,6 +317,6 @@ App.post("/getNextMove", urlEncodedBodyParser, (req, res) => {
 //start the server
 App.listen(process.env.PORT||PORT, (error) => {
   if (!error) {
-    console.log("Server Running On Port : " + PORT);
+    console.log("Server Running ");
   } else console.log(error);
 });

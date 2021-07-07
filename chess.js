@@ -1,5 +1,6 @@
 const express = require("express");
 const oracle = require('oracledb');
+var cors = require('cors');
 const App = express();
 const PORT = 5050;
 var games = {};
@@ -21,6 +22,7 @@ const Pieces = {
 var bodyParser = require("body-parser");
 const { response } = require("express");
 var urlEncodedBodyParser = bodyParser.urlencoded({ extended: false });
+App.use(cors({'origin':'https://jayschess.herokuapp.com'}));
 App.get("/", (request, response) => {
   console.log('Hello There / Request recieved');
   response.send("Chess Game Server");
